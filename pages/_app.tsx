@@ -32,10 +32,10 @@ const myBoxTheme = {
   boxLoadingBadgeColor: '#F0EFEF'
 }
 
-// export const sfPro = localFont({
-//   src: "./fonts/sf-pro-display/SFPRODISPLAYREGULAR.otf",
-//   variable: "--font-sf-pro-display",
-// });
+export const sfPro = localFont({
+  src: "./fonts/sf-pro-display/SFPRODISPLAYREGULAR.otf",
+  variable: "--font-sfPro-bold",
+});
 
 const queryClient = new QueryClient();
 
@@ -59,7 +59,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <BoxHooksContextProvider apiKey={process.env.NEXT_PUBLIC_DECENT_API_KEY}>
                   <TokenContextProvider>
                     <SearchContextProvider>
-                      <div className={`bg-[#13110F] text-white`}>
+                      <div className={`${sfPro.variable} bg-[#13110F] text-white`}>
                         <Component {...pageProps} />
                       </div>
                     </SearchContextProvider>
