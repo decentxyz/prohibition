@@ -1,19 +1,19 @@
 import { GetServerSideProps, NextPage } from 'next';
-import { getContractData } from '../../../lib/nftData/getContractData';
-import MintNavbar from '../../../components/Navbars/MintNavbar';
-import styles from "../../../styles/Home.module.css";
+import { getContractData } from '../../../../lib/nftData/getContractData';
+import MintNavbar from '../../../../components/Navbars/MintNavbar';
+import styles from "../../../../styles/Home.module.css";
 import Image from 'next/image';
 import Link from 'next/link';
-import MintFooter from '../../../components/Footers/MintFooter';
-import { getMintInfo } from "../../../lib/nftData/getMintInfo";
-import { MintInfoProps } from '../../../utils/types';
+import MintFooter from '../../../../components/Footers/MintFooter';
+import { getMintInfo } from "../../../../lib/nftData/getMintInfo";
+import { MintInfoProps } from '../../../../utils/types';
 import { useAccount } from "wagmi";
-import { EtherscanScan } from "../../../utils/logos";
+import { EtherscanScan } from "../../../../utils/logos";
 import { useState, useEffect } from 'react';
-import { convertTimestamp } from '../../../utils/convertTimestamp';
-import MintBox from '../../../components/NFTs/MintBox';
-import { getBlockscanner } from '../../../utils/blockscanners';
-import { trackedNfts } from '../../../lib/nftData/trackedNfts';
+import { convertTimestamp } from '../../../../utils/convertTimestamp';
+import MintBox from '../../../../components/NFTs/MintBox';
+import { getBlockscanner } from '../../../../utils/blockscanners';
+import { trackedNfts } from '../../../../lib/nftData/trackedNfts';
 
 const Mint: NextPage = (props: any) => {
   const {
