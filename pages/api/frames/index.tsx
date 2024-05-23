@@ -8,7 +8,7 @@ import {
 } from '@decent.xyz/box-common';
 // import { sendTransaction } from '@wagmi/core';
 import { createPublicClient, http, parseAbi, Chain } from 'viem'
-import { base, polygon } from 'viem/chains'
+import { base } from 'viem/chains'
 
 /*
 import {
@@ -207,7 +207,7 @@ app.frame('/', async (c) => {
   return c.res({
     // adapt the image url to your liking. add an image in the /public folder
     image: `${process.env.FRAME_URL || 'http://localhost:5173'}/nfts/nft.png`,
-    imageAspectRatio: '1:1',
+    imageAspectRatio: '1.91:1',
     intents: [
       <Button.Transaction key='success' target="/tx" action="/tx-success">Mint Now</Button.Transaction>,
       //<Button.Transaction target="/approve" action="/tx">Approve</Button.Transaction>,
@@ -350,7 +350,7 @@ app.frame('/tx-success', async (c) => {
     try {
         return c.res({
         image: process.env.FRAME_URL + "/frame/success.png",
-        imageAspectRatio: '1:1',
+        imageAspectRatio: '1.91:1',
         intents: [
           <Button.Link key='success' href={process.env.AFTER_MINT_URL as string}> {process.env.AFTER_MINT_TEXT as string}</Button.Link>,
         ],
@@ -365,7 +365,7 @@ app.frame('/tx-success', async (c) => {
     // return a new frame where image shows failed
     return c.res({
       image: <div style={{ fontSize: 12 }}>Transaction failed, try again!</div>,
-      imageAspectRatio: '1:1',
+      imageAspectRatio: '1.91:1',
       intents: [
         <Button.Transaction key='failed' target="/tx" action="/tx-success">Mint Now</Button.Transaction>,
       ],
@@ -374,7 +374,7 @@ app.frame('/tx-success', async (c) => {
 
   return c.res({
     image: process.env.FRAME_URL + "/frame/waiting.png", // replace with your nice waiting screen image
-    imageAspectRatio: '1:1',
+    imageAspectRatio: '1.91:1',
     intents: [
       <Button key='waiting' action='/end'>Processing... Check Status</Button>,
     ],
@@ -394,7 +394,7 @@ app.frame('/end', async (c) => {
 
         return c.res({
         image: process.env.FRAME_URL + "/frame/end.png",
-        imageAspectRatio: '1:1',
+        imageAspectRatio: '1.91:1',
         intents: [
           <Button.Link key='end' href={process.env.AFTER_MINT_URL as string}> {process.env.AFTER_MINT_TEXT as string}</Button.Link>,
         ],
@@ -409,7 +409,7 @@ app.frame('/end', async (c) => {
     // return a new frame where image shows failed
     return c.res({
       image: <div style={{ fontSize: 12 }}>Transaction failed, try again!</div>,
-      imageAspectRatio: '1:1',
+      imageAspectRatio: '1.91:1',
       intents: [
         <Button.Transaction key='failed-2' target="/tx" action="/tx-success">Mint Now</Button.Transaction>,
       ],
@@ -418,7 +418,7 @@ app.frame('/end', async (c) => {
 
   return c.res({
     image: process.env.FRAME_URL + "/frame/waiting.png", // replace with your nice waiting screen image
-    imageAspectRatio: '1:1',
+    imageAspectRatio: '1.91:1',
     intents: [
       <Button key='processing' action='/end'>Processing... Check Status</Button>,
     ],
