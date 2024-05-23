@@ -2,9 +2,32 @@ import MintBox from "./MintBox";
 import { trackedNfts } from "../../lib/nftData/trackedNfts";
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { getContractInfo } from "../../lib/nftData/readContract";
 
 const MintPreview = ({ collection }: { collection: any }) => {
   const activeNft = trackedNfts.filter(nft => nft.address.toLowerCase() === collection.primaryContract.toLowerCase());
+  const [activeInfo, setActiveInfo] = useState({
+    saleStart: 0,
+    saleEnd: 0,
+    name: '',
+    symbol: '',
+    tokenPrice: 0n,
+    mintFee: 0n
+  });
+
+  useEffect(() => {
+    async function loadData(){
+      const { saleStart, saleEnd, name, symbol, tokenPrice, mintFee } = await getContractInfo({
+        address: activeNft[0].address,
+        chainId: activeNft[0].chainId
+      });
+      setActiveInfo({ saleStart: Number(saleStart), saleEnd: Number(saleEnd), name: String(name), symbol: String(symbol), tokenPrice: BigInt(String(tokenPrice)), mintFee: BigInt(String(mintFee)) });
+    }
+    if (activeNft) {
+      loadData()
+    }
+  }, [activeNft]);
 
   return <>
     <div className="flex gap-2 items-center text-xs uppercase">
@@ -20,7 +43,7 @@ const MintPreview = ({ collection }: { collection: any }) => {
       <div className="text-2xl text-gray-400">by {activeNft[0].artist}</div>
     </div>
 
-    <MintBox collection={collection} />
+    <MintBox collection={collection} nftInfo={activeInfo} />
 
     <div className="py-4">
       {collection.description}

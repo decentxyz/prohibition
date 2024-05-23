@@ -1,6 +1,6 @@
 import NftCard from "./NftCard";
 import styles from '../../styles/nfts.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useFeaturedNftContext } from "../../lib/contexts/FeaturedNftContext";
 // import { useSearchContext } from "../../lib/contexts/SearchContext";
 import { useRunSearch } from "../../lib/runSearch";
@@ -8,15 +8,38 @@ import { trackedNfts } from "../../lib/nftData/trackedNfts";
 import Link from "next/link";
 import MintBox from "./MintBox";
 import Modal from "../Modal";
+import { getContractInfo } from "../../lib/nftData/readContract";
 
 const FeaturedNftContainer = ({ nftData }: any) => {
   const { middleIndex, setMiddleIndex } = useFeaturedNftContext();
   const [isOpen, setIsOpen] = useState(false);
   // const { search } = useSearchContext();
   const [sortedNftData, setSortedNftData] = useState(nftData);
+  const [activeInfo, setActiveInfo] = useState({
+    saleStart: 0,
+    saleEnd: 0,
+    name: '',
+    symbol: '',
+    tokenPrice: 0n,
+    mintFee: 0n
+  });
 
   const activeNft = trackedNfts.filter(nft => nft.address.toLowerCase() === sortedNftData[middleIndex]?.primaryContract.toLowerCase());
-  const nftDate = new Date(activeNft[0].startDate * 1000);
+
+  useEffect(() => {
+    async function loadData(){
+      const { saleStart, saleEnd, name, symbol, tokenPrice, mintFee } = await getContractInfo({
+        address: activeNft[0].address,
+        chainId: activeNft[0].chainId
+      });
+      setActiveInfo({ saleStart: Number(saleStart), saleEnd: Number(saleEnd), name: String(name), symbol: String(symbol), tokenPrice: BigInt(String(tokenPrice)), mintFee: BigInt(String(mintFee)) });
+    }
+    if (activeNft) {
+      loadData()
+    }
+  }, [activeNft]);
+
+  const nftDate = new Date(activeInfo.saleStart * 1000);
   const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = nftDate.toLocaleDateString('en-US', options);
 
@@ -57,7 +80,7 @@ const FeaturedNftContainer = ({ nftData }: any) => {
       >
         <div className="pb-2 font-thin text-xl">Purchase {sortedNftData[middleIndex].name}</div>
         <div className="w-full py-2">
-          <MintBox collection={sortedNftData[middleIndex]} />
+          <MintBox collection={sortedNftData[middleIndex]} nftInfo={activeInfo} />
         </div>
       </Modal>
 
