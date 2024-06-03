@@ -119,7 +119,7 @@ function TokenGroupOption({
           </span>
         </div>
         <div className={"box-flex box-flex-col box-items-end box-my-auto"}>
-          ${usdBalanceText}
+          {usdBalanceText}
         </div>
 
         <div className="box-w-[48px] box-flex box-items-center box-justify-end">

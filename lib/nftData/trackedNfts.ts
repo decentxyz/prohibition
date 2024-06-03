@@ -35,6 +35,8 @@ export interface MintInfoProps {
 }
 
 export const trackedNfts: ContractAddress[] = [
+  // sian
+  { address: '0x28C2D938C7aFAbb9D83cF0D52d936236ED17FE7b', chainId: ChainId.BASE, startDate: 1717516800, endDate: 1717603140, price: "0.0008", mintFee: '0.0008', source: 'Decent', artist: 'Sian', art: '/nfts/sian.mp4' },
   // basedeneo
   { address: '0x28C2D938C7aFAbb9D83cF0D52d936236ED17FE7b', chainId: ChainId.BASE, startDate: 1717430400, endDate: 1717516740, price: "0", mintFee: '0.0008', source: 'Decent', artist: 'basedeneo', art: '/nfts/basedeneo.png' },
   // yungwknd
