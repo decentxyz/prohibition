@@ -35,6 +35,8 @@ export interface MintInfoProps {
 }
 
 export const trackedNfts: ContractAddress[] = [
+  // Numo
+  { address: '0xeCa5F63E4C281516444825359bF04cAC5a915880', chainId: ChainId.BASE, startDate: 1717603200, endDate: 1717689540, price: "0.001", mintFee: '0.0008', source: 'Decent', artist: 'Numo', art: '/nfts/numo.png' },
   // sian
   { address: '0xcEAd19855115531F0c19789cc783dD0c96666be6', chainId: ChainId.BASE, startDate: 1717516800, endDate: 1717603140, price: "0.0008", mintFee: '0.0008', source: 'Decent', artist: 'Sian', art: '/nfts/sian.mp4' },
   // basedeneo
