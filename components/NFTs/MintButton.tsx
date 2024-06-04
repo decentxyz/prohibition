@@ -307,7 +307,7 @@ export default function MintButton({
           </button>
           <div className="relative flex items-center gap-4 z-50">
             <div
-              onClick={() => setShowBalanceSelector(!showBalanceSelector)}
+              onClick={() => chain && setShowBalanceSelector(!showBalanceSelector)}
               className="rounded-full border border-black py-1 px-2 bg-white flex items-center hover:opacity-80 cursor-pointer"
             >
               <div className="box-relative box-w-[24px] box-h-[24px] box-mr-[8px] box-flex box-items-center">

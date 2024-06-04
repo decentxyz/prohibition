@@ -99,8 +99,7 @@ function TokenGroupOption({
         onClick={onOpen}
         className={
           "box-flex box-items-center " +
-          "box-p-[12px] box-w-full " +
-          "group-hover:box-bg-seasalt "
+          "box-p-[12px] box-w-full " 
         }
       >
         <div className="box-relative box-mr-[8px] box-shrink-0">
@@ -196,7 +195,7 @@ function TokenOption({
     <button
       onClick={onClick}
       className={
-        "box-min-w-[280px] box-w-full box-flex box-py-[12px] hover:box-bg-seasalt box-items-center " +
+        "box-min-w-[280px] box-w-full box-flex box-py-[12px] box-items-center " +
         className
       }
     >
