@@ -35,6 +35,8 @@ export interface MintInfoProps {
 }
 
 export const trackedNfts: ContractAddress[] = [
+  // Richard Zheng
+  { address: '0x09ABBfC872A726739F013C4D6AF656dD2d49e3D5', chainId: ChainId.BASE, startDate: 1717689600, endDate: 1717775940, price: "0.002", mintFee: '0.0008', source: 'Decent', artist: 'Richard Zheng', art: '/nfts/richard-zheng.jpg' },
   // Numo
   { address: '0xeCa5F63E4C281516444825359bF04cAC5a915880', chainId: ChainId.BASE, startDate: 1717603200, endDate: 1717689540, price: "0.001", mintFee: '0.0008', source: 'Decent', artist: 'Numo', art: '/nfts/numo.png' },
   // sian
