@@ -35,6 +35,8 @@ export interface MintInfoProps {
 }
 
 export const trackedNfts: ContractAddress[] = [
+  // developer
+  { address: '0x074aC088b2cF8d39141BE090DA7d91d49138628A', chainId: ChainId.BASE, startDate: 1718035200, endDate: 1718121540, price: "0", mintFee: '0.0008', source: 'Decent', artist: 'developer', art: '/nfts/developer.gif' },
   // Luca Ponsato
   { address: '0xf42cFC0521aeD33D7795a5152d487e8dD446E4F0', chainId: ChainId.BASE, startDate: 1717776000, endDate: 1717862340, price: "0.001", mintFee: '0.0008', source: 'Decent', artist: 'Luca Ponsato', art: '/nfts/lucaAscension.jpg' },
   // Richard Zheng
