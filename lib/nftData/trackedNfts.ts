@@ -35,6 +35,8 @@ export interface MintInfoProps {
 }
 
 export const trackedNfts: ContractAddress[] = [
+  // Trevor Traynor
+  { address: '0x902e4A04583555a6F20e7Fa0a0D6470D05388Fcb', chainId: ChainId.BASE, startDate: 1718121600, endDate: 1718207940, price: "0.0008", mintFee: '0.0008', source: 'Decent', artist: 'Trevor Traynor', art: '/nfts/trevor-traynor.jpg' },
   // developer
   { address: '0x074aC088b2cF8d39141BE090DA7d91d49138628A', chainId: ChainId.BASE, startDate: 1718035200, endDate: 1718121540, price: "0", mintFee: '0.0008', source: 'Decent', artist: 'developer', art: '/nfts/developer.gif' },
   // Luca Ponsato
