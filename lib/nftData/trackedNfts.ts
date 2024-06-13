@@ -35,6 +35,8 @@ export interface MintInfoProps {
 }
 
 export const trackedNfts: ContractAddress[] = [
+  // by Foodmasku
+  { address: '0xB1a162386300340DA55AFa3e6Ab8bbdCEf405401', chainId: ChainId.BASE, startDate: 1718294400, endDate: 1718380740, price: "0", mintFee: '0.0008', source: 'Decent', artist: 'by Foodmasku', art: '/nfts/luciana-guerra.png' },
   // by Luciana Guerra
   { address: '0x708A6a44f56f47548c0bff16c9fe18aBa9F5338B', chainId: ChainId.BASE, startDate: 1718208000, endDate: 1718294340, price: "0.00088", mintFee: '0.0008', source: 'Decent', artist: 'by Luciana Guerra', art: '/nfts/luciana-guerra.png' },
   // Trevor Traynor
