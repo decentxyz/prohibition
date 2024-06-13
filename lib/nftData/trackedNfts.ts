@@ -35,6 +35,8 @@ export interface MintInfoProps {
 }
 
 export const trackedNfts: ContractAddress[] = [
+  // by Mentl Nomad
+  { address: '0x328d0e9376D6e4207bC6A917bE2761D10FA4E115', chainId: ChainId.BASE, startDate: 1718380800, endDate: 1718467140, price: "0", mintFee: '0.0008', source: 'Decent', artist: 'Mentl Nomad', art: '/nfts/mentl-nomad.mp4' },
   // by Foodmasku
   { address: '0xB1a162386300340DA55AFa3e6Ab8bbdCEf405401', chainId: ChainId.BASE, startDate: 1718294400, endDate: 1718380740, price: "0", mintFee: '0.0008', source: 'Decent', artist: 'Foodmasku', art: '/nfts/foodmasku.jpeg' },
   // by Luciana Guerra
