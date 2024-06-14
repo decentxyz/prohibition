@@ -10,8 +10,8 @@ const NftMedia = ({ media, mintPage }: { media: string, mintPage?: boolean }) =>
     return <Image
     className={`${mintPage ? 'inset-0 w-full h-full object-contain' : 'absolute rounded-md bg-cover w-full h-full object-cover'}`}
     src={media}
-    width={400}
-    height={400}
+    width="1000"
+    height="1000"
     alt=""
   />
   }
