@@ -15,7 +15,7 @@ const FeaturedNftContainer = ({ nftData, trackedNfts }: any) => {
   const [sortedNftData, setSortedNftData] = useState(nftData);
 
   const activeNft = trackedNfts.filter(nft => nft.address.toLowerCase() === nftData[middleIndex]?.primaryContract.toLowerCase());
-  const nftDate = new Date(activeNft[0].startDate * 1000);
+  const nftDate = new Date(activeNft[0]?.startDate * 1000);
   const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = nftDate.toLocaleDateString('en-US', options);
 
@@ -93,7 +93,7 @@ const FeaturedNftContainer = ({ nftData, trackedNfts }: any) => {
               <Link href={`/mint/${sortedNftData[middleIndex].chainId}/${sortedNftData[middleIndex].primaryContract}`}>
                 <div className="hover:text-primary">{sortedNftData[middleIndex].name}</div>
               </Link>
-              <div className="text-base text-gray-400 font-light">by {activeNft[0].artist}</div>
+              <div className="text-base text-gray-400 font-light">by {activeNft[0]?.artist}</div>
               <button className="bg-white rounded-lg py-1 mt-4 px-20 text-black" onClick={() => setIsOpen(true)}>Mint</button>
             </div>
           </div>
