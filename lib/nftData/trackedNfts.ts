@@ -36,7 +36,7 @@ export interface MintInfoProps {
 
 export const trackedNfts: ContractAddress[] = [
   // by Max Jackson
-  // { address: '0x8c9F52691cF9F9F0C4c8ccB9b63E3a27283a8319', chainId: ChainId.BASE, startDate: 1718726400, endDate: 1718812740, price: "0.002", mintFee: '0.0008', source: 'Decent', artist: 'Max Jackson', art: '/nfts/max-jackson.png' },
+  { address: '0x0E39715Ca6208EC6b5094FF9E4699A32EbAb9a3f', chainId: ChainId.BASE, startDate: 1718726400, endDate: 1718812740, price: "0.002", mintFee: '0.0008', source: 'Decent', artist: 'Max Jackson', art: '/nfts/max-jackson.png' },
   // by Kyle Patrick
   { address: '0x8c9F52691cF9F9F0C4c8ccB9b63E3a27283a8319', chainId: ChainId.BASE, startDate: 1718640000, endDate: 1718726340, price: "0", mintFee: '0.0008', source: 'Decent', artist: 'Kyle Patrick', art: '/nfts/basedworld.png' },
   // by Mentl Nomad
