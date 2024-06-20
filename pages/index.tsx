@@ -60,13 +60,28 @@ export async function getStaticProps() {
     return acc;
   }, {});
 
-  const contractDataPromises = Object.entries(nftsByChainId).map(([chainId, addresses]) => {
+
+  const contractDataPromises = Object.entries(nftsByChainId).map(async ([chainId, addresses]) => {
     const cleanAddresses = addresses as `0x${string}`[];
     const cleanChainId = chainId as unknown as ChainId;
-    return getContractData(cleanAddresses, cleanChainId).then(data => ({
+  
+    const chunkArray = <T,>(array: T[], chunkSize: number): T[][] => {
+      const chunks: T[][] = [];
+      for (let i = 0; i < array.length; i += chunkSize) {
+        chunks.push(array.slice(i, i + chunkSize));
+      }
+      return chunks;
+    };
+  
+    const addressChunks = chunkArray(cleanAddresses, 5);
+    const chunkPromises = addressChunks.map(chunk => getContractData(chunk, cleanChainId));
+    const chunkResults = await Promise.all(chunkPromises);
+    const data = chunkResults.flat();
+  
+    return {
       chainId,
       data
-    }));
+    };
   });
 
   type Data = any;
