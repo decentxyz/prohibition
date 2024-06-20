@@ -35,6 +35,8 @@ export interface MintInfoProps {
 }
 
 export const trackedNfts: ContractAddress[] = [
+  // // by Sinclair
+  { address: '0xB765D5C4769f6abd05f4B8948BceA4888A25ce49', chainId: ChainId.BASE, startDate: 1718899200, endDate: 1718985540, price: "0", mintFee: '0.0008', source: 'Decent', artist: 'Sinclair', art: '/nfts/sinclair.gif' },
   // by Tristan Rettich
   { address: '0x4680c6A96941A977FeAF71e503f3D0409157E02F', chainId: ChainId.BASE, startDate: 1718812800, endDate: 1718899140, price: "0.0015", mintFee: '0.0008', source: 'Decent', artist: 'Tristan Rettich', art: '/nfts/tristan-rettich.gif' },
   // by Max Jackson

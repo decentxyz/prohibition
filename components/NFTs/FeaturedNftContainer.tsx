@@ -54,7 +54,7 @@ const FeaturedNftContainer = ({ nftData, trackedNfts }: any) => {
         isOpen={isOpen}
         setIsOpen={setIsOpen}
       >
-        <div className="pb-2 font-thin text-xl">Purchase {sortedNftData[middleIndex].name}</div>
+        <div className="pb-2 font-thin text-xl">Purchase {sortedNftData[middleIndex]?.name}</div>
         <div className="w-full py-2">
           <MintBox collection={sortedNftData[middleIndex]} />
         </div>
@@ -90,7 +90,7 @@ const FeaturedNftContainer = ({ nftData, trackedNfts }: any) => {
           {formattedDate}
           <div className="font-medium hidden sm:flex">
             <div>
-              <Link href={`/mint/${sortedNftData[middleIndex].chainId}/${sortedNftData[middleIndex].primaryContract}`}>
+              <Link href={`/mint/${sortedNftData[middleIndex]?.chainId}/${sortedNftData[middleIndex]?.primaryContract}`}>
                 <div className="hover:text-primary">{sortedNftData[middleIndex].name}</div>
               </Link>
               <div className="text-base text-gray-400 font-light">by {activeNft[0]?.artist}</div>
