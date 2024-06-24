@@ -35,9 +35,11 @@ export interface MintInfoProps {
 }
 
 export const trackedNfts: ContractAddress[] = [
-  // // by Jonathan Wolfe
+  // by Jonathan Wolfe
+  { address: '0xe27366c3fC8D7Cc31AB00475294D7Ed2aC9129C1', chainId: ChainId.BASE, startDate: 1719244800, endDate: 1719331140, price: "0.006", mintFee: '0.0008', source: 'Decent', artist: 'Galaktic Gang', art: '/nfts/speaceship.mp4' },
+  // by Jonathan Wolfe
   { address: '0x896037d93A231273070dd5F5c9a72aba9A3Fe920', chainId: ChainId.BASE, startDate: 1718985600, endDate: 1719071999, price: "0.0025", mintFee: '0.0008', source: 'Decent', artist: 'Jonathan Wolfe', art: '/nfts/wolfelrg.png' },
-  // // by Sinclair
+  // by Sinclair
   { address: '0xB765D5C4769f6abd05f4B8948BceA4888A25ce49', chainId: ChainId.BASE, startDate: 1718899200, endDate: 1718985540, price: "0", mintFee: '0.0008', source: 'Decent', artist: 'Sinclair', art: '/nfts/sinclair.gif' },
   // by Tristan Rettich
   { address: '0x4680c6A96941A977FeAF71e503f3D0409157E02F', chainId: ChainId.BASE, startDate: 1718812800, endDate: 1718899140, price: "0.0015", mintFee: '0.0008', source: 'Decent', artist: 'Tristan Rettich', art: '/nfts/tristan-rettich.gif' },
