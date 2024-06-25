@@ -35,6 +35,8 @@ export interface MintInfoProps {
 }
 
 export const trackedNfts: ContractAddress[] = [
+  // by ChrisCoCreated
+  { address: '0x77da82374fbb6AF39009E025DF68F843654E2133', chainId: ChainId.BASE, startDate: 1719331200, endDate: 1719417540, price: "0.002", mintFee: '0.0008', source: 'Decent', artist: 'ChrisCoCreated', art: '/nfts/slow.jpg' },
   // by Jonathan Wolfe
   { address: '0xe27366c3fC8D7Cc31AB00475294D7Ed2aC9129C1', chainId: ChainId.BASE, startDate: 1719244800, endDate: 1719331140, price: "0.006", mintFee: '0.0008', source: 'Decent', artist: 'Galaktic Gang', art: '/nfts/speaceship.mp4' },
   // by Jonathan Wolfe
