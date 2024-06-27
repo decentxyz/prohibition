@@ -36,7 +36,8 @@ const approveToken = async ({
       abi: erc20Abi,
       functionName: 'approve',
       args: [spender as EvmAddress, amount],
-      chainId
+      chainId,
+      account: spender as `0x${string}`
     });
 
     const receipt = await waitForTransactionReceipt(wagmiConfig, { hash: result, chainId });

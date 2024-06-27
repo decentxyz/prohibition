@@ -12,7 +12,7 @@ import {
   RelayInfo,
   EvmTransaction,
   TokenInfo,
-  ethGasToken,
+  
 } from "@decent.xyz/box-common";
 import { ClientRendered, ChainIcon } from "@decent.xyz/box-ui";
 import { BoxHooksContextProvider } from "@decent.xyz/box-hooks";
@@ -93,8 +93,12 @@ const initialState: MintStateType = {
 };
 
 const BaseEth: TokenInfo = {
-  ...ethGasToken,
-  chainId: ChainId.BASE
+  address: zeroAddress,
+  chainId: ChainId.BASE,
+  decimals: 18,
+  symbol: 'ETH',
+  name: 'Ether',
+  isNative: true
 }
 
 function mintReducer(state: MintStateType, action: MintAction): MintStateType {
