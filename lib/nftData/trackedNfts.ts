@@ -35,6 +35,8 @@ export interface MintInfoProps {
 }
 
 export const trackedNfts: ContractAddress[] = [
+  // by m/branson
+  { address: '0xd750B359462C64Be808b3Ed8E48643DD69c69Aa5', chainId: ChainId.BASE, startDate: 1719590400, endDate: 1719676800, price: "0", mintFee: '0.0008', source: 'Decent', artist: 'm/branson', art: '/nfts/mb24-like-breathing.mp4' },
   // by Satoshi’s Mom
   { address: '0x8cbdD0ca795A069847Dc241006997049e9362f24', chainId: ChainId.BASE, startDate: 1719504000, endDate: 1719590340, price: "0.0025", mintFee: '0.0008', source: 'Decent', artist: 'Satoshi’s Mom', art: '/nfts/chewing-gum.gif' },
   // by Mumbot
