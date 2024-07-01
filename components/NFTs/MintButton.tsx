@@ -12,7 +12,7 @@ import {
   RelayInfo,
   EvmTransaction,
   TokenInfo,
-  ethGasToken,
+  getNativeTokenInfo
 } from "@decent.xyz/box-common";
 import { ClientRendered, ChainIcon } from "@decent.xyz/box-ui";
 import { BoxHooksContextProvider } from "@decent.xyz/box-hooks";
@@ -92,8 +92,9 @@ const initialState: MintStateType = {
   loading: false,
 };
 
+const native = getNativeTokenInfo(ChainId.BASE);
 const BaseEth: TokenInfo = {
-  ...ethGasToken,
+  ...native,
   chainId: ChainId.BASE
 }
 
